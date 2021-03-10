@@ -1,0 +1,43 @@
+.artist {
+    font-family: var(--secondary-font);
+    font-size: var(--artist-size-mobile);
+    width: fit-content;
+    margin: 5px 0;
+    font-weight: 400;
+}
+
+.artist:hover {
+    text-decoration: underline;
+}
+
+/*adding comma whem miltiple artists. Float right makes so this content 
+  doesn't get an underline when artist is hovered */
+.artist::after {
+    content: ", \00a0";
+    float: right;
+}
+
+/*adding an & between second to last and last artist when multiple artists 
+  are desplayed*/
+.artist:nth-last-child(2):after {
+    content: "\00a0 & \00a0";
+    float: right;
+}
+
+.artist:last-of-type::after {
+    content: "";
+}
+
+
+@media screen and (min-width: 700px) {
+    .artist {
+        font-size: var(--artist-size-tablet);
+    }
+}
+
+@media screen and (min-width: 1025px) {
+
+    .artist {
+        font-size: var(--artist-size-desktop);
+    }
+}

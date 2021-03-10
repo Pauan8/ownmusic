@@ -1,0 +1,84 @@
+.gallery-item {
+    width: 90%;
+    display: flex;
+    align-items: center;
+    position: relative;
+    flex-direction: column;
+    margin-bottom: 50px;
+    margin: 5%;
+}
+
+.album-container {
+    box-sizing: border-box;
+    height: 100vw;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    flex: auto 1 1;
+}
+
+.album-container:hover .album-cover {
+    opacity: 0.5;
+}
+
+.album-cover {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    overflow: hidden;
+}
+
+.album-cover img {
+    position: absolute;
+    width: 100%;
+    min-height: 100%;
+    object-fit: cover;
+}
+
+.text-container {
+    width: 100%;
+    height: 60px;
+}
+
+.title {
+    width: 100%;
+    ;
+    font-family: var(--main-font);
+    font-size: var(--title-size-mobile);
+    margin: 10px 0;
+}
+
+.title:hover {
+    text-decoration: underline;
+}
+
+.artist-container {
+    display: flex;
+}
+
+@media screen and (min-width: 700px) {
+
+    .album-container {
+        height: 50vw;
+    }
+
+    .title {
+        font-size: var(--title-size-tablet);
+    }
+
+}
+
+@media screen and (min-width: 1025px) {
+
+    .album-container {
+        height: 25vw;
+    }
+
+    .title {
+        font-size: var(--title-size-desktop)
+    }
+
+}
