@@ -1,40 +1,55 @@
-import React from 'react'
-import data from './data.json'
-import  { Album } from './Album'
-import  { Artists } from './Artists'
-let i = 0;
-
+import React from "react";
+import data from "./data.json";
+import playlist from "./playlist.json";
+import { Album } from "./components/Album";
+import { Artists } from "./components/Artists";
+import { Playlist } from "./components/Playlist";
 
 export const App = () => {
+  
+  const filterMusic = (type) => {
+    return data.albums.items
+      .filter((album) => album.album_type === type)
+      .map((album) => (
+          <Album
+            key={album.name}
+            img={album.images[0].url}
+            title={album.name}
+            name={album.artists.map((artist) => (
+              <Artists
+                key={artist.name}
+                name={artist.name}
+                url={artist.external_urls.spotify}
+              />
+            ))}
+          />
+      ));
+  };
+
   return (
     <>
-      <h1 className="header">New Releases and Singles</h1>
-      <div className="container">
-        {data.albums.items.map(MapAlbum)}
-      </div>
+      <main className="main">
+        <div className="sidebar">
+          <dt>Playlists</dt>
+          {playlist.playlists.items.map((lists) => (
+            <Playlist
+              key={lists.name}
+              list={lists.name}
+              url={lists.external_urls.spotify}
+            />
+          ))}
+        </div>
+        <h1 className="header">New Albums &amp; Singles</h1>
+        
+          <h2 className="single-header">Singles</h2>
+          <div className="container1">
+          {filterMusic("single")}
+          </div>
+          <h2 className="album-header">Albums</h2>
+          <div className="container2">
+          {filterMusic("album")}
+        </div>
+      </main>
     </>
-  )
-}
-
-const MapAlbum = (item) => {
-  i++
-  if (i < 9) {
-  return (
-    < Album 
-      key = {item.name} 
-      img = {item.images[0].url} 
-      title = {item.name}
-      name =  {item.artists.map(artist => MapArtists(artist))}
-    />
-  )
-}}
-
-const MapArtists = (artist) =>  {
-    return (
-      < Artists 
-        key = {artist.name} 
-        name = {artist.name} 
-        url = {artist.external_urls.spotify} 
-      />
-    )
-}
+  );
+};

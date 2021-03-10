@@ -1,0 +1,25 @@
+.sidebar {
+    background-color: rgb(61, 61, 61);
+}
+
+.list-link::before {
+    content: "\1F3A7 \00a0";
+    float: left;
+    opacity: 0.3;
+}
+
+.list-link:hover::before  {
+    opacity: 1;
+}
+
+dt {
+    font-family: Helvetica;
+    font-size: 22px;
+    margin: 30px 10% 30px 10%;
+    font-weight: 700;
+}
+
+dd {
+    margin: 0 10%;
+    padding: 5% 0;
+}

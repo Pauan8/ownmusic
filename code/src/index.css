@@ -1,16 +1,4 @@
-:root {
-  --main-font: "Roboto", sans-serif;
-  --second-font: "Helvetica";
-  --title-size-mobile: 16px;
-  --title-size-tablet: 18px;
-  --title-size-desktop: 20px;
-  --artist-size-mobile: 14px;
-  --artist-size-tablet: 16px;
-  --artist-size-desktop: 18px;
-  --header-size-mobile: 20px;
-  --header-size-tablet: 25px;
-  --header-size-desktop: 30px;
-}
+
 
 body {
   margin: 0;
@@ -33,21 +21,63 @@ a {
   color: white;
 }
 
+a:hover {
+  text-decoration: underline;
+}
+
+.main {
+  display: grid;
+  grid-template-columns: 10px 1fr 10px;
+  grid-template-areas: 
+  ". header ."
+  ". subheader1 ."
+  ". main1 ."
+  ". subheader2 ."
+  ". main2 .";
+}
+
 .header {
+  padding-bottom: 3px;
+  font-family: Helvetica;
+  grid-area: header;
   padding-left: 26px;
-  font-family: var(--main-font);
-  font-size: var(--header-size-mobile);
+  font-size: 22px;
   color: white;
   border-bottom: 0.5px solid grey;
 }
 
-.container {
+.single-header {
+  grid-area: subheader1;
+  padding-left: 20px;
+}
+
+.album-header {
+  grid-area: subheader2;
+  padding-left: 20px;
+}
+
+.sidebar {
+  display: none;
+ }
+
+.container1 {
+  grid-area: main1;
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(1, 1fr);
+  grid-template-columns: 1fr;
   grid-template-rows: auto;
   grid-gap: 10px;
 }
+
+.container2 {
+  grid-area: main2;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  grid-gap: 10px;
+}
+
 
 .album-container:hover .menu-heart {
   display: block;
@@ -68,22 +98,49 @@ a {
 
 @media screen and (min-width: 700px) {
 
-  .header {
-    font-size: var(--header-size-tablet)
+  .main {
+  grid-template-columns: 30% 2% 66% 2%;
+  grid-template-areas: 
+  "header header header header"
+  "side . subheader1 ."
+  "side . main1 ."
+  "side . subheader2 ."
+  "side . main2 .";
   }
 
-  .container {
+  .header {
+   /*  padding-left: 32%; */
+  }
+
+  .sidebar {
+    display: block;
+    grid-area: side;
+  }
+
+  .container1, .container2 {
     grid-template-columns: repeat(2, 1fr);
+    column-gap: 20px;
   }
 
 }
 
 @media screen and (min-width: 1025px) {
-  .header {
-    font-size: var(--header-size-desktop)
+  .main {
+    grid-template-columns: 15% 1% 40% 1% 40% 3%;
+    grid-template-areas: 
+    "header header  header header header header"
+    "side . subheader1 . subheader2 ."
+    "side . main1 . main2 .";
   }
 
-  .container {
-    grid-template-columns: repeat(4, 1fr);
+  .container1, .container2 {
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: repeat(12, 25vw);
   }
+
+  .container2 {
+    padding-left: 20px;
+    border-left: 0.5px solid gray;
+  }
+
 }

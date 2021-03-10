@@ -6,24 +6,6 @@
         "album_type": "single",
         "artists": [
           {
-            "name": "hi",
-            "external_urls": {
-              "spotify": "https://open.spotify.com/artist/6M2wZ9GZgrQXHCFfjv46we"
-            }
-          },
-          {
-            "name": "hi",
-            "external_urls": {
-              "spotify": "https://open.spotify.com/artist/6M2wZ9GZgrQXHCFfjv46we"
-            }
-          },
-          {
-            "name": "hi",
-            "external_urls": {
-              "spotify": "https://open.spotify.com/artist/6M2wZ9GZgrQXHCFfjv46we"
-            }
-          },
-          {
             "external_urls": {
               "spotify": "https://open.spotify.com/artist/6M2wZ9GZgrQXHCFfjv46we"
             },

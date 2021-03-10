@@ -1,9 +1,9 @@
 .artist {
-    font-family: var(--secondary-font);
-    font-size: var(--artist-size-mobile);
+    font-size: 14px;
     width: fit-content;
     margin: 5px 0;
     font-weight: 400;
+    color: #a0a0a0;
 }
 
 .artist:hover {
@@ -29,15 +29,3 @@
 }
 
 
-@media screen and (min-width: 700px) {
-    .artist {
-        font-size: var(--artist-size-tablet);
-    }
-}
-
-@media screen and (min-width: 1025px) {
-
-    .artist {
-        font-size: var(--artist-size-desktop);
-    }
-}
