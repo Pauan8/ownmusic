@@ -3,8 +3,9 @@ import "./Artists.css";
 
 export const Artists = (props) => {
   return (
-    <a href={props.url} className="artist">
-      {props.name}
-    </a>
-  );
+    <a className="artist" key= {props.name}
+          href={props.url}>
+            {props.name}
+      </a>
+  )
 };

@@ -1,6 +1,7 @@
 import { Menu } from "./Menu";
 import React from "react";
 import "./Album.css";
+import { Artists } from "./Artists";
 
 export const Album = (props) => {
   return (
@@ -13,7 +14,15 @@ export const Album = (props) => {
       </div>
       <div className="text-container">
         <h4 className="title">{props.title}</h4>
-        <div className="artist-container">{props.name}</div>
+        <div className="artist-container">
+          {props.name.map((artist) => (
+            <Artists
+              key={artist.name}
+              name={artist.name}
+              url={artist.external_urls.spotify}
+            />
+          ))}
+        </div>
       </div>
     </div>
   );

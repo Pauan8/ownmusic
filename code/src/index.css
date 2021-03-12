@@ -40,7 +40,6 @@ a:hover {
   padding-bottom: 3px;
   font-family: Helvetica;
   grid-area: header;
-  padding-left: 26px;
   font-size: 22px;
   color: white;
   border-bottom: 0.5px solid grey;
@@ -48,36 +47,30 @@ a:hover {
 
 .single-header {
   grid-area: subheader1;
-  padding-left: 20px;
+  margin-top: 50px;
 }
 
 .album-header {
   grid-area: subheader2;
-  padding-left: 20px;
+  margin-top: 50px;
 }
 
 .sidebar {
   display: none;
  }
 
-.container1 {
-  grid-area: main1;
+.container1,.container2 {
   width: 100%;
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: auto;
-  grid-gap: 10px;
 }
 
+.container1{
+  grid-area: main1;
+}
 .container2 {
   grid-area: main2;
-  width: 100%;
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: auto;
-  grid-gap: 10px;
 }
-
 
 .album-container:hover .menu-heart {
   display: block;
@@ -101,7 +94,7 @@ a:hover {
   .main {
   grid-template-columns: 30% 2% 66% 2%;
   grid-template-areas: 
-  "header header header header"
+  "side header header header"
   "side . subheader1 ."
   "side . main1 ."
   "side . subheader2 ."
@@ -109,7 +102,7 @@ a:hover {
   }
 
   .header {
-   /*  padding-left: 32%; */
+    padding-left: 2%;
   }
 
   .sidebar {
@@ -119,28 +112,28 @@ a:hover {
 
   .container1, .container2 {
     grid-template-columns: repeat(2, 1fr);
-    column-gap: 20px;
+    grid-column-gap: 20px;
   }
 
 }
 
 @media screen and (min-width: 1025px) {
   .main {
-    grid-template-columns: 15% 1% 40% 1% 40% 3%;
+    grid-template-columns: 15% 1% 40% 3% 40% 1%;
     grid-template-areas: 
-    "header header  header header header header"
+    "side header  header header header header"
     "side . subheader1 . subheader2 ."
     "side . main1 . main2 .";
   }
 
-  .container1, .container2 {
-    grid-template-columns: repeat(2,1fr);
-    grid-template-rows: repeat(12, 25vw);
+  .header {
+    padding-left: 1%;
   }
 
-  .container2 {
-    padding-left: 20px;
-    border-left: 0.5px solid gray;
+  .container1, .container2 {
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: repeat(12, 27vw);
   }
+
 
 }

@@ -1,22 +1,19 @@
 .gallery-item {
-    width: 90%;
+    width: 100%;
+    height: fit-content;
     display: flex;
     align-items: center;
     position: relative;
     flex-direction: column;
-    margin-bottom: 50px;
-    margin: 5%;
 }
 
 .album-container {
-    box-sizing: border-box;
-    height: 100vw;
+    height: fit-content;
     width: 100%;
     display: flex;
     justify-content: center;
-    align-items: center;
+/*     align-items: center; */
     position: relative;
-    flex: auto 1 1;
 }
 
 .album-container:hover .album-cover {
@@ -24,24 +21,24 @@
 }
 
 .album-cover {
-    height: 100%;
+    height: 80vw;
     width: 100%;
-    position: absolute;
-    top: 0;
+    position: relative;
     overflow: hidden;
+    border: solid  rgb(36, 35, 35) 4px;
 }
 
 .album-cover img {
     position: absolute;
-    width: 100%;
-    min-height: 100%;
+    min-width: 100%;
+    height: 100%;
     object-fit: cover;
 }
 
 .text-container {
     font-family: Helvetica;
     width: 100%;
-    height: 80px;
+    height: 100px;
     margin-bottom: 20px;
 }
 
@@ -68,20 +65,15 @@
         margin: 0;
     }
 
-    .album-container {
-        height: 35vw;
+    .album-cover {
+        height: 30vw;
     }
 
 }
 
 @media screen and (min-width: 1025px) {
 
-    .album-container {
-        height: 20vw;
-    }
-
     .album-cover {
-        width: 100%;
-        height: 20vw;
+        height: 19vw;
     }
 }
